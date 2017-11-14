@@ -15,5 +15,3 @@ var spotifyKeys = {
 }
 
 module.exports = spotifyKeys;
-
-
