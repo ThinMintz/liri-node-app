@@ -77,7 +77,7 @@ function song(){
         }
       
 /*      console.log(JSON.stringify(data, null, 2));*/
-
+//attempting to get the needed info
       var spot = JSON.parse(data);
       console.log(data)
       });
