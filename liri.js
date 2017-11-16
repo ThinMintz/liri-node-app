@@ -3,10 +3,10 @@ var request = require("request");
 var Twitter = require ("twitter");
 var spotify = require("spotify-web-api-node");
 var userCommands = process.argv[2];
-var userRequests = process.argv.slice(3).join(' ');
+var userRequests = process.argv.slice(3).join('+');
 var twitKeys = new Twitter(key.twitterKeys);
 var spotKeys = new spotify(key.spotifyKeys);
-var param = {screen_name: 'JOonhisJOB'};
+var param = {screen_name: 'ThinMintz5', count: 20};
 var fs = require("fs");
 
 //different commands
@@ -51,7 +51,8 @@ request(queryUrl, function(error, response, body) {
 
 function tweets() {
 	twitKeys.get("statuses/user_timeline", param, function(error, tweets, response) {
-		if (!error) {
+		//if not an error, loop through tweets and show the texts
+    if (!error) {
 			for (var i = 0; i < tweets.length; i++) {
 				console.log(tweets[i].text);
 				}
@@ -69,3 +70,11 @@ function doSomething() {
 	})
 }
 
+function song() {
+  spotifyApi.search('Amish Paradise', function(err, data) {
+  if (err) {
+    console.error('Something went wrong', err.message);
+    return;
+  }
+}
+};
