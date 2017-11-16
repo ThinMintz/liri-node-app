@@ -1,9 +1,9 @@
 var key = require("./key.js");
 var request = require("request");
 var Twitter = require ("twitter");
-var spotify = require("spotify-web-api-node");
+var spotify = require("node-spotify-api");
 var userCommands = process.argv[2];
-var userRequests = process.argv.slice(3).join('+');
+var userRequests = process.argv.splice(3).join('+');
 var twitKeys = new Twitter(key.twitterKeys);
 var spotKeys = new spotify(key.spotifyKeys);
 var param = {screen_name: 'ThinMintz5', count: 20};
@@ -71,10 +71,22 @@ function doSomething() {
 }
 
 function song(){
-  spotKeys.search('Happy', function(err, data){
-    if (err){
-      console.error("There was an error", err.message);
-      return;
-    };
-  });
-}
+    spotKeys.search({ type: 'track', query: "Amish Paradise" }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+      
+/*      console.log(JSON.stringify(data, null, 2));*/
+
+      var spot = JSON.parse(data);
+      console.log(data)
+      });
+};
+
+/*  spotKeys.search({ type: 'track', query: 'Amish Paradise' }, function(err, data) {
+  if (err) {
+    return console.log('Error occurred: ' + err);
+  }
+console.log(data); 
+});
+};*/

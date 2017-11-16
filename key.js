@@ -16,8 +16,8 @@ var twitterKeys = {
 
 
 var spotifyKeys = {
-  consumer_key: '9610926d69244ec4b4a8d01e0cfbbd82',
-  consumer_secret: '96164f81ac5a4aa3a47cafeb9aa32aa7',
+  id: '9610926d69244ec4b4a8d01e0cfbbd82',
+  secret: '96164f81ac5a4aa3a47cafeb9aa32aa7',
 }
 
 module.exports = {
