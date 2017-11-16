@@ -70,11 +70,11 @@ function doSomething() {
 	})
 }
 
-function song() {
-  spotifyApi.search('Amish Paradise', function(err, data) {
-  if (err) {
-    console.error('Something went wrong', err.message);
-    return;
-  }
+function song(){
+  spotKeys.search('Happy', function(err, data){
+    if (err){
+      console.error("There was an error", err.message);
+      return;
+    };
+  });
 }
-};
